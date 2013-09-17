@@ -1,7 +1,6 @@
 INDEX VERSION 1.126+/Users/scottcaruso/Desktop/Schoolwork/Month 23/week3/MDF3_widgets_and_action_bars/.metadata/.plugins/org.eclipse.jdt.core
 1603861010.index
 1377251446.index
-1080650516.index
 1926245732.index
 1725965439.index
 1535301871.index

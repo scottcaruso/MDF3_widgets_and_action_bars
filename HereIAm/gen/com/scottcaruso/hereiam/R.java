@@ -185,6 +185,7 @@ containing a value of this type.
         public static final int placeholder=0x7f02001b;
     }
     public static final class id {
+        public static final int action_search=0x7f05000c;
         public static final int action_settings=0x7f05000b;
         public static final int capturedImage=0x7f050007;
         public static final int facebookbutton=0x7f050009;
@@ -204,6 +205,7 @@ containing a value of this type.
     }
     public static final class menu {
         public static final int main=0x7f090000;
+        public static final int main_activity_actions=0x7f090001;
     }
     public static final class string {
         public static final int action_settings=0x7f060016;
@@ -293,6 +295,8 @@ containing a value of this type.
         public static final int placeholder_status_update_string_=0x7f060019;
         public static final int post_to_facebook=0x7f06001a;
         public static final int post_to_twitter=0x7f06001b;
+        public static final int test_option_1=0x7f06001f;
+        public static final int test_option_2=0x7f06001e;
     }
     public static final class style {
         /** 
