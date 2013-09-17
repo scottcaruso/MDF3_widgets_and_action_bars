@@ -12,5 +12,11 @@
     <string name="placeholder">Placeholder Picture</string>
     <string name="test_option_2">Test Option 2</string>
     <string name="test_option_1">Test Option 1</string>
+    
+    <string-array name="action_list">
+		<item>Test 1</item>
+		<item>Test 2</item>
+		<item>Test 3</item>
+	</string-array>
 
 </resources>

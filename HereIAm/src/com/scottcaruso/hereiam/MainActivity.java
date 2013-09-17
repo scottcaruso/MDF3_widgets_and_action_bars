@@ -24,6 +24,8 @@ import android.os.Handler;
 import android.os.Message;
 import android.os.Messenger;
 import android.annotation.SuppressLint;
+import android.app.ActionBar;
+import android.app.ActionBar.OnNavigationListener;
 import android.app.Activity;
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -35,7 +37,9 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.SpinnerAdapter;
 import android.widget.Toast;
 
 @SuppressLint("HandlerLeak")
@@ -49,6 +53,8 @@ public class MainActivity extends Activity {
 	public String currentNetworkState;
 	public NetworkReceiver networkReceiver;
 	
+	int NAVIGATION_MODE_LIST = 1;
+	
     @SuppressLint("HandlerLeak")
 	@Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,6 +62,25 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
         
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+        
+        SpinnerAdapter headerSpinner = ArrayAdapter.createFromResource(this, R.array.action_list,
+                android.R.layout.simple_spinner_dropdown_item);
+        
+        OnNavigationListener mOnNavigationListener = new OnNavigationListener() {
+        	  // Get the same strings provided for the drop-down's ArrayAdapter
+        	  String[] strings = getResources().getStringArray(R.array.action_list);
+
+        	  @Override
+        	  public boolean onNavigationItemSelected(int position, long itemId) {
+        		Log.i("Clicked",String.valueOf(position)+" was clicked.");
+        	    return true;
+        	  }
+        	};
+        ActionBar myActionBar = this.getActionBar();
+        myActionBar.setDisplayShowTitleEnabled(false);
+        myActionBar.setNavigationMode(NAVIGATION_MODE_LIST);
+
+        myActionBar.setListNavigationCallbacks(headerSpinner, mOnNavigationListener);
         
         //Initialize the button so you can actually use the app.
         Button findMeButton = (Button) findViewById(R.id.findmebutton);
