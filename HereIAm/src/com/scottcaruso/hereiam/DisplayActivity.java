@@ -54,7 +54,8 @@ public class DisplayActivity extends Activity
         		switch (position) {
 				case 0:
 	        		Log.i("Clicked","Main was clicked.");
-					//Do nothing
+					Intent mainActivity = new Intent(DisplayActivity.this,MainActivity.class);
+					startActivityForResult(mainActivity, 1);
 					break;
 				case 1:
 					Intent tweetsActivity = new Intent(DisplayActivity.this,TweetsActivity.class);
@@ -177,7 +178,8 @@ public class DisplayActivity extends Activity
                 
                 return true;
             case R.id.action_info:
-                
+				Intent aboutActivity = new Intent(this,About.class);
+				startActivityForResult(aboutActivity, 1);
                 return true;
             default:
                 return super.onOptionsItemSelected(item);

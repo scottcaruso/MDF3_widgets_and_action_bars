@@ -9,8 +9,10 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.widget.ArrayAdapter;
 import android.widget.SpinnerAdapter;
+import android.widget.Toast;
 
 public class FacebookActivity extends Activity {
 	
@@ -73,6 +75,24 @@ public class FacebookActivity extends Activity {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.main_activity_actions, menu);
         return super.onCreateOptionsMenu(menu);
+    }
+	
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle presses on the action bar items
+        switch (item.getItemId()) {
+            case R.id.action_pictures:
+				Toast toast = Toast.makeText(this, "Can't select a picture from this view!", Toast.LENGTH_LONG);
+				toast.show();
+                
+                return true;
+            case R.id.action_info:
+				Intent aboutActivity = new Intent(this,About.class);
+				startActivityForResult(aboutActivity, 1);
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 
 }

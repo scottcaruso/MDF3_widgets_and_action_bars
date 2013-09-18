@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Here I Am</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="find_me_now_">Find Me Now!</string>
+    <string name="placeholder_status_update_string_">Placeholder status update string.</string>
+    <string name="post_to_facebook">Post to Facebook</string>
+    <string name="post_to_twitter">Post to Twitter</string>
+    <string name="main_logo">Main Logo</string>
+    <string name="placeholder">This page is a placeholder activity that would eventually list out all of the Facebook posts the user has made from the app.</string>
+    <string name="about">About</string>
+    <string name="test_option_1">Test Option 1</string>
+    
+    <string-array name="action_list">
+		<item>Here I Am</item>
+		<item>Tweets</item>
+		<item>Facebook Posts</item>
+	</string-array>
+
+</resources>

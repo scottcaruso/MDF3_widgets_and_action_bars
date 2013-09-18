@@ -7,7 +7,6 @@ package com.scottcaruso.hereiam;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.io.InputStream;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -39,7 +38,6 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.pm.ActivityInfo;
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -360,7 +358,8 @@ public class MainActivity extends Activity {
                 
                 return true;
             case R.id.action_info:
-                
+				Intent aboutActivity = new Intent(this,About.class);
+				startActivityForResult(aboutActivity, 1);
                 return true;
             default:
                 return super.onOptionsItemSelected(item);

@@ -18,5 +18,8 @@
 		<item>Tweets</item>
 		<item>Facebook Posts</item>
 	</string-array>
+		<string name="here_i_am_">Here I Am!</string>
+		<string name="created_by_scott_caruso">Created by: Scott Caruso</string>
+		<string name="copyright_2013">Copyright 2013</string>
 
 </resources>

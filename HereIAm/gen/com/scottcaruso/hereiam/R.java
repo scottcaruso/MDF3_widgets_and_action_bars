@@ -189,27 +189,31 @@ containing a value of this type.
         public static final int polaroid=0x7f02001c;
     }
     public static final class id {
-        public static final int action_info=0x7f05000e;
-        public static final int action_pictures=0x7f05000d;
-        public static final int action_settings=0x7f05000c;
-        public static final int capturedImage=0x7f050008;
-        public static final int facebookbutton=0x7f05000a;
-        public static final int findmebutton=0x7f050005;
+        public static final int action_info=0x7f050011;
+        public static final int action_pictures=0x7f050010;
+        public static final int action_settings=0x7f05000f;
+        public static final int capturedImage=0x7f05000b;
+        public static final int facebookbutton=0x7f05000d;
+        public static final int findmebutton=0x7f050009;
         public static final int hybrid=0x7f050004;
-        public static final int logo=0x7f050006;
+        public static final int imageView1=0x7f050006;
+        public static final int logo=0x7f05000a;
         public static final int none=0x7f050000;
         public static final int normal=0x7f050001;
         public static final int satellite=0x7f050002;
-        public static final int statusUpdate=0x7f050009;
+        public static final int statusUpdate=0x7f05000c;
         public static final int terrain=0x7f050003;
-        public static final int textView1=0x7f050007;
-        public static final int twitterbutton=0x7f05000b;
+        public static final int textView1=0x7f050005;
+        public static final int textView2=0x7f050007;
+        public static final int textView3=0x7f050008;
+        public static final int twitterbutton=0x7f05000e;
     }
     public static final class layout {
-        public static final int activity_main=0x7f030000;
-        public static final int facebook=0x7f030001;
-        public static final int photo_and_location_display=0x7f030002;
-        public static final int tweets=0x7f030003;
+        public static final int about=0x7f030000;
+        public static final int activity_main=0x7f030001;
+        public static final int facebook=0x7f030002;
+        public static final int photo_and_location_display=0x7f030003;
+        public static final int tweets=0x7f030004;
     }
     public static final class menu {
         public static final int main=0x7f0a0000;
@@ -297,8 +301,11 @@ containing a value of this type.
         /**  Long form sign-in button text [CHAR LIMIT=30] 
          */
         public static final int common_signin_button_text_long=0x7f06000e;
+        public static final int copyright_2013=0x7f060022;
+        public static final int created_by_scott_caruso=0x7f060021;
         public static final int find_me_now_=0x7f060018;
         public static final int hello_world=0x7f060017;
+        public static final int here_i_am_=0x7f060020;
         public static final int main_logo=0x7f06001c;
         public static final int placeholder=0x7f06001d;
         public static final int placeholder_status_update_string_=0x7f060019;
