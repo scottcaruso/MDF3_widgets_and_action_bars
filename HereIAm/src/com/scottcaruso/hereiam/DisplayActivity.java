@@ -5,7 +5,9 @@
 package com.scottcaruso.hereiam;
 
 
+import android.app.ActionBar;
 import android.app.Activity;
+import android.app.ActionBar.OnNavigationListener;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
@@ -16,9 +18,14 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.SpinnerAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -26,6 +33,8 @@ public class DisplayActivity extends Activity
 {
 	public String currentNetworkState;
 	public NetworkReceiver networkReceiver;
+	ActionBar myActionBar;
+	int NAVIGATION_MODE_LIST = 1;
 	
 	@Override
     protected void onCreate(Bundle savedInstanceState) 
@@ -33,6 +42,44 @@ public class DisplayActivity extends Activity
         super.onCreate(savedInstanceState);
         
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+        
+        SpinnerAdapter headerSpinner = ArrayAdapter.createFromResource(this, R.array.action_list,
+                android.R.layout.simple_spinner_dropdown_item);
+        
+        OnNavigationListener mOnNavigationListener = new OnNavigationListener() {
+
+        	  @Override
+        	  public boolean onNavigationItemSelected(int position, long itemId) {
+        		
+        		switch (position) {
+				case 0:
+	        		Log.i("Clicked","Main was clicked.");
+					//Do nothing
+					break;
+				case 1:
+					Intent tweetsActivity = new Intent(DisplayActivity.this,TweetsActivity.class);
+					startActivityForResult(tweetsActivity, 1);
+	        		Log.i("Clicked","Tweets was clicked.");
+					break;
+					
+				case 2:
+					Intent facebookActivity = new Intent(DisplayActivity.this,FacebookActivity.class);
+					startActivityForResult(facebookActivity, 1);
+	        		Log.i("Clicked","Facebook was clicked.");
+					break;
+				
+				default:
+					break;
+				}
+        		
+        	    return true;
+        	  }
+        	};
+        myActionBar = this.getActionBar();
+        myActionBar.setDisplayShowTitleEnabled(false);
+        myActionBar.setNavigationMode(NAVIGATION_MODE_LIST);
+
+        myActionBar.setListNavigationCallbacks(headerSpinner, mOnNavigationListener);
         
         //Register the intentfilter so we can monitor the network here, too.
         IntentFilter filter = new IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION);
@@ -111,4 +158,29 @@ public class DisplayActivity extends Activity
     	}
     }
 	
+	@Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        // Inflate the menu items for use in the action bar
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.main_activity_actions, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+	
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle presses on the action bar items
+        switch (item.getItemId()) {
+            case R.id.action_pictures:
+				Toast toast = Toast.makeText(DisplayActivity.this, "Can't select a picture from this view!", Toast.LENGTH_LONG);
+				toast.show();
+                
+                return true;
+            case R.id.action_info:
+                
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
 }

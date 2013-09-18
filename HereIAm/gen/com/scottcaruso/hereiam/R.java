@@ -189,7 +189,8 @@ containing a value of this type.
         public static final int polaroid=0x7f02001c;
     }
     public static final class id {
-        public static final int action_search=0x7f05000d;
+        public static final int action_info=0x7f05000e;
+        public static final int action_pictures=0x7f05000d;
         public static final int action_settings=0x7f05000c;
         public static final int capturedImage=0x7f050008;
         public static final int facebookbutton=0x7f05000a;

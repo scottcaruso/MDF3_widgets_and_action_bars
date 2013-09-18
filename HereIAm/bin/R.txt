@@ -56,7 +56,8 @@ int drawable here_i_am_logo 0x7f020019
 int drawable ic_launcher 0x7f02001a
 int drawable placeholder 0x7f02001b
 int drawable polaroid 0x7f02001c
-int id action_search 0x7f05000d
+int id action_info 0x7f05000e
+int id action_pictures 0x7f05000d
 int id action_settings 0x7f05000c
 int id capturedImage 0x7f050008
 int id facebookbutton 0x7f05000a

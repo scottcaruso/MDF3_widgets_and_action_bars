@@ -5,6 +5,10 @@
 package com.scottcaruso.hereiam;
 
 
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.InputStream;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -19,10 +23,12 @@ import android.location.LocationListener;
 import android.location.LocationManager;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.os.Messenger;
+import android.provider.MediaStore;
 import android.annotation.SuppressLint;
 import android.app.ActionBar;
 import android.app.ActionBar.OnNavigationListener;
@@ -33,9 +39,11 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.pm.ActivityInfo;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -55,6 +63,7 @@ public class MainActivity extends Activity {
 	
 	int NAVIGATION_MODE_LIST = 1;
 	ActionBar myActionBar;
+	private static final int SELECT_PHOTO = 200; //for camera picker
 	
     @SuppressLint("HandlerLeak")
 	@Override
@@ -63,6 +72,7 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
         
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+    	runGeolocation();
         
         SpinnerAdapter headerSpinner = ArrayAdapter.createFromResource(this, R.array.action_list,
                 android.R.layout.simple_spinner_dropdown_item);
@@ -71,8 +81,6 @@ public class MainActivity extends Activity {
 
         	  @Override
         	  public boolean onNavigationItemSelected(int position, long itemId) {
-        		Bundle activityExtras = new Bundle();
-        		String ACTION_BAR_INTENT = "selected action";
         		
         		switch (position) {
 				case 0:
@@ -186,7 +194,29 @@ public class MainActivity extends Activity {
     	{
     		Log.i("Request Code","Coming back from display.");
             myActionBar.setSelectedNavigationItem(0);
-    	} else
+    	} else if (requestCode == 200)
+    	{
+    		Log.i("Request Code","Coming back from camera picker.");
+            Uri selectedImage = data.getData();
+            Bitmap bitmap;
+            try {
+				bitmap = MediaStore.Images.Media.getBitmap(this.getContentResolver(), selectedImage);
+			} catch (FileNotFoundException e) {
+				bitmap = null;
+				e.printStackTrace();
+			} catch (IOException e) {
+				bitmap = null;
+				e.printStackTrace();
+			}
+            Bitmap scaledBitmap = scaleDownBitmap(bitmap, 50, this);
+    		Bundle extras = new Bundle();
+	        extras.putString("location", location);
+	        extras.putParcelable("bitmap", scaledBitmap);
+    		Intent showDisplay = new Intent(MainActivity.this, DisplayActivity.class);
+    		showDisplay.putExtras(extras);
+	        startActivityForResult(showDisplay, 1);
+    	}
+	else
     	{
     		Log.i("Error","No request code found for the deleted activity.");
     	}
@@ -214,7 +244,8 @@ public class MainActivity extends Activity {
     	Criteria criteria = new Criteria();
     	criteria.setAccuracy(Criteria.ACCURACY_COARSE);
     	criteria.setCostAllowed(false);
-    	String providerName = lm.getBestProvider(criteria, true);
+    	String providerName = "network";
+    	//lm.getBestProvider(criteria, true);
     	final LocationListener listener = new LocationListener() {
     		@Override
     		public void onLocationChanged(Location location) 
@@ -316,6 +347,36 @@ public class MainActivity extends Activity {
  			startDataService.putExtra(DataRetrievalService.LAT_KEY,lat);
  			this.startService(startDataService);
          }
+    }
+    
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle presses on the action bar items
+        switch (item.getItemId()) {
+            case R.id.action_pictures:
+            	Intent photoPickerIntent = new Intent(Intent.ACTION_PICK);
+            	photoPickerIntent.setType("image/*");
+            	startActivityForResult(photoPickerIntent, SELECT_PHOTO); 
+                
+                return true;
+            case R.id.action_info:
+                
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
+    
+    public static Bitmap scaleDownBitmap(Bitmap photo, int newHeight, Context context) 
+    {
+    	final float densityMultiplier = context.getResources().getDisplayMetrics().density;        
+
+    	int h= (int) (newHeight*densityMultiplier);
+    	int w= (int) (h * photo.getWidth()/((double) photo.getHeight()));
+
+    	photo=Bitmap.createScaledBitmap(photo, w, h, true);
+
+    	return photo;
     }
   
 }
