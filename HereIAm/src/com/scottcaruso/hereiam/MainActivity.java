@@ -54,6 +54,7 @@ public class MainActivity extends Activity {
 	public NetworkReceiver networkReceiver;
 	
 	int NAVIGATION_MODE_LIST = 1;
+	ActionBar myActionBar;
 	
     @SuppressLint("HandlerLeak")
 	@Override
@@ -67,16 +68,37 @@ public class MainActivity extends Activity {
                 android.R.layout.simple_spinner_dropdown_item);
         
         OnNavigationListener mOnNavigationListener = new OnNavigationListener() {
-        	  // Get the same strings provided for the drop-down's ArrayAdapter
-        	  String[] strings = getResources().getStringArray(R.array.action_list);
 
         	  @Override
         	  public boolean onNavigationItemSelected(int position, long itemId) {
-        		Log.i("Clicked",String.valueOf(position)+" was clicked.");
+        		Bundle activityExtras = new Bundle();
+        		String ACTION_BAR_INTENT = "selected action";
+        		
+        		switch (position) {
+				case 0:
+	        		Log.i("Clicked","Main was clicked.");
+					//Do nothing
+					break;
+				case 1:
+					Intent tweetsActivity = new Intent(MainActivity.this,TweetsActivity.class);
+					startActivityForResult(tweetsActivity, 1);
+	        		Log.i("Clicked","Tweets was clicked.");
+					break;
+					
+				case 2:
+					Intent facebookActivity = new Intent(MainActivity.this,FacebookActivity.class);
+					startActivityForResult(facebookActivity, 1);
+	        		Log.i("Clicked","Facebook was clicked.");
+					break;
+				
+				default:
+					break;
+				}
+        		
         	    return true;
         	  }
         	};
-        ActionBar myActionBar = this.getActionBar();
+        myActionBar = this.getActionBar();
         myActionBar.setDisplayShowTitleEnabled(false);
         myActionBar.setNavigationMode(NAVIGATION_MODE_LIST);
 
@@ -163,6 +185,7 @@ public class MainActivity extends Activity {
     	} else if (requestCode == 1)
     	{
     		Log.i("Request Code","Coming back from display.");
+            myActionBar.setSelectedNavigationItem(0);
     	} else
     	{
     		Log.i("Error","No request code found for the deleted activity.");

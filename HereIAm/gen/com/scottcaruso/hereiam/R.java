@@ -186,31 +186,36 @@ containing a value of this type.
         public static final int here_i_am_logo=0x7f020019;
         public static final int ic_launcher=0x7f02001a;
         public static final int placeholder=0x7f02001b;
+        public static final int polaroid=0x7f02001c;
     }
     public static final class id {
-        public static final int action_search=0x7f05000c;
-        public static final int action_settings=0x7f05000b;
-        public static final int capturedImage=0x7f050007;
-        public static final int facebookbutton=0x7f050009;
+        public static final int action_search=0x7f05000d;
+        public static final int action_settings=0x7f05000c;
+        public static final int capturedImage=0x7f050008;
+        public static final int facebookbutton=0x7f05000a;
         public static final int findmebutton=0x7f050005;
         public static final int hybrid=0x7f050004;
         public static final int logo=0x7f050006;
         public static final int none=0x7f050000;
         public static final int normal=0x7f050001;
         public static final int satellite=0x7f050002;
-        public static final int statusUpdate=0x7f050008;
+        public static final int statusUpdate=0x7f050009;
         public static final int terrain=0x7f050003;
-        public static final int twitterbutton=0x7f05000a;
+        public static final int textView1=0x7f050007;
+        public static final int twitterbutton=0x7f05000b;
     }
     public static final class layout {
         public static final int activity_main=0x7f030000;
-        public static final int photo_and_location_display=0x7f030001;
+        public static final int facebook=0x7f030001;
+        public static final int photo_and_location_display=0x7f030002;
+        public static final int tweets=0x7f030003;
     }
     public static final class menu {
         public static final int main=0x7f0a0000;
         public static final int main_activity_actions=0x7f0a0001;
     }
     public static final class string {
+        public static final int about=0x7f06001e;
         public static final int action_settings=0x7f060016;
         public static final int app_name=0x7f060015;
         /**   Title for notification shown when GooglePlayServices needs to be
@@ -299,7 +304,6 @@ containing a value of this type.
         public static final int post_to_facebook=0x7f06001a;
         public static final int post_to_twitter=0x7f06001b;
         public static final int test_option_1=0x7f06001f;
-        public static final int test_option_2=0x7f06001e;
     }
     public static final class style {
         /** 
