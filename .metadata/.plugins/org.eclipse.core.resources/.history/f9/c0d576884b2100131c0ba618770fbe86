@@ -7,7 +7,8 @@
     android:widgetCategory="home_screen"
     android:resizeMode="horizontal"
     android:configure="com.scottcaruso.pictureviewwidget.WidgetConfig" 
-    android:previewImage="@drawable/photo"
     android:initialKeyguardLayout="@layout/picture_widget_layout" >
 
 </appwidget-provider>
+
+<!--     android:previewImage="" -->

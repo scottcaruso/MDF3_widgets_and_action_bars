@@ -11,3 +11,5 @@
     android:initialKeyguardLayout="@layout/picture_widget_layout" >
 
 </appwidget-provider>
+
+<!--     android:previewImage="" -->

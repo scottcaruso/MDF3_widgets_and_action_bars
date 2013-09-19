@@ -18,3 +18,4 @@
 1379607568735	Extracts string 'Image Name' into R.string.image_name
 1379607582034	Extracts string 'Artist Name' into R.string.artist_name
 1379607621480	Extracts string 'Retrieval Date' into R.string.retrieval_date
+1379609368611	Rename resource 'polaroid.png'
