@@ -1,0 +1,8 @@
+package com.example.news_feed_widget;
+
+import android.appwidget.AppWidgetProvider;
+
+public class NewsWidgetProvider extends AppWidgetProvider 
+{
+
+}
