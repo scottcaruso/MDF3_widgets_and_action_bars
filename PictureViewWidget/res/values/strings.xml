@@ -13,5 +13,10 @@
     <string name="please_choose_how_often_you_d_like_to_see_updates">Please Choose How Often You\'d Like To See Updates</string>
     <string name="ok">OK</string>
     <string name="random_picture_widget">Random Picture Widget</string>
+    <string name="image_viewer">Image Viewer</string>
+    <string name="current_picture">current picture</string>
+    <string name="image_name">Image Name</string>
+    <string name="artist_name">Artist Name</string>
+    <string name="retrieval_date">Retrieval Date</string>
 
 </resources>

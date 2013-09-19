@@ -13,3 +13,8 @@
 1379580297608	Rename resource '4.png'
 1379580310179	Rename resource '5.png'
 1379582624261	Extracts string 'Random Picture Widget' into R.string.random_picture_widget
+1379607381644	Extracts string 'Image Viewer' into R.string.image_viewer
+1379607461489	Extracts string 'current picture' into R.string.current_picture
+1379607568735	Extracts string 'Image Name' into R.string.image_name
+1379607582034	Extracts string 'Artist Name' into R.string.artist_name
+1379607621480	Extracts string 'Retrieval Date' into R.string.retrieval_date
