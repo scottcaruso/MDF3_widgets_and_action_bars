@@ -7,15 +7,12 @@ import android.appwidget.AppWidgetProvider;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.util.Log;
 import android.widget.RemoteViews;
 
 public class PictureWidgetProvider extends AppWidgetProvider {
 
 	public void onUpdate(Context context, AppWidgetManager appWidgetManager, int[] appWidgetIds)
 	{
-		super.onUpdate(context, appWidgetManager, appWidgetIds);
-		Log.i("Info","Update triggered.");
 		Random rand = new Random();
 		int n = rand.nextInt(5) + 1;
 		
