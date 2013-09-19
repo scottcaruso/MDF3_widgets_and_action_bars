@@ -48,7 +48,8 @@ public class PictureWidgetProvider extends AppWidgetProvider {
 			
 			Bitmap scaledBitmap = scaleDownBitmap(bitmap, 100, context);
 			
-			Intent i = new Intent(context,LargeView.class);
+			Intent i = new Intent(context,PictureWidgetProvider.class);
+			i.setAction("android.appwidget.action.APPWIDGET_UPDATE");
 			PendingIntent pi = PendingIntent.getActivity(context, 0, i, PendingIntent.FLAG_UPDATE_CURRENT);
 			
 			RemoteViews rv = new RemoteViews(context.getPackageName(),R.layout.picture_widget_layout);
