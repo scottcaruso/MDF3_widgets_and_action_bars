@@ -4,8 +4,10 @@ INDEX VERSION 1.126+/Users/scottcaruso/Desktop/Schoolwork/Month 23/week3/MDF3_wi
 1926245732.index
 2187965242.index
 3368361782.index
+2347542612.index
 1856896125.index
 1725965439.index
 1080650516.index
 1705481348.index
+1245670984.index
 787560578.index

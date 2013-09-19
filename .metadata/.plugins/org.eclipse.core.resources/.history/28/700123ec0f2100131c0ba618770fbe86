@@ -1,0 +1,47 @@
+package com.scottcaruso.pictureviewwidget;
+
+import java.util.Random;
+
+import android.appwidget.AppWidgetManager;
+import android.appwidget.AppWidgetProvider;
+import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.widget.RemoteViews;
+
+public class PictureWidgetProvider extends AppWidgetProvider {
+
+	public void onUpdate(Context context, AppWidgetManager appWidgetManager, int[] appWidgetIds)
+	{
+		Random rand = new Random();
+		int n = rand.nextInt(5) + 1;
+		
+		int resourceID = 0;
+		
+		if (n == 1)
+		{
+			resourceID = R.drawable.img1;
+		} else if (n == 2)
+		{
+			resourceID = R.drawable.img2;
+		} else if (n == 3)
+		{
+			resourceID = R.drawable.img3;
+		} else if (n == 4)
+		{
+			resourceID = R.drawable.img4;
+		} else if (n == 5)
+		{
+			resourceID = R.drawable.img5;
+		}
+		
+		Bitmap bitmap= BitmapFactory.decodeResource(context.getResources(), 
+			    resourceID);
+		
+		RemoteViews rv = new RemoteViews(context.getPackageName(),R.layout.picture_widget_layout);
+		rv.setBitmap(R.id.imageView1, "setImageBitmap", bitmap);
+		appWidgetManager.updateAppWidget(appWidgetIds, rv);
+		
+	}
+	
+}

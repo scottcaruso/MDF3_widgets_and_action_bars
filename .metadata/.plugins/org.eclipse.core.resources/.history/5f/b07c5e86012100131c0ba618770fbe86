@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Random Picture Cycler"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+    
+    <RadioGroup
+        android:id="@+id/radio_hours"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+ 
+        <RadioButton
+            android:id="@+id/radioOne"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/_1_hour" />
+ 
+        <RadioButton
+            android:id="@+id/radioFour"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/_4_hours" 
+            android:checked="true" />
+        
+        <RadioButton
+            android:id="@+id/radioEight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/_8_hours" />
+        
+        <RadioButton
+            android:id="@+id/radioTwelve"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/_12_hours" />
+        
+        <RadioButton
+            android:id="@+id/radioTwentyFour"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/_24_hours" />
+ 
+    </RadioGroup>
+
+</LinearLayout>

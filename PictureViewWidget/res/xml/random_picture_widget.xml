@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<appwidget-provider xmlns:android="http://schemas.android.com/apk/res/android" 
+    android:minWidth="180dp"
+    android:minHeight="180dp"
+    android:updatePeriodMillis="60000"
+    android:initialLayout="@layout/picture_widget_layout"
+    android:widgetCategory="home_screen"
+    android:resizeMode="horizontal"
+    android:configure="com.scottcaruso.pictureviewwidget.WidgetConfig" 
+    android:initialKeyguardLayout="@layout/picture_widget_layout" >
+
+</appwidget-provider>
+
+<!--     android:previewImage="" -->

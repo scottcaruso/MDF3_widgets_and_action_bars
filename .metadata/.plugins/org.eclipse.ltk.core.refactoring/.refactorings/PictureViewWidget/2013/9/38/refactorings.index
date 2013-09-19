@@ -1,0 +1,15 @@
+1379577458654	Extracts string '1 hour' into R.string._1_hour
+1379577468638	Extracts string '4 hours' into R.string._4_hours
+1379577477446	Extracts string '8 hours' into R.string._8_hours
+1379577491798	Extracts string '12 hours' into R.string._12_hours
+1379577502924	Extracts string '24 hours' into R.string._24_hours
+1379577618471	Extracts string 'Random Picture Cycler' into R.string.random_picture_cycler
+1379577654533	Extracts string 'Please Choose How Often You'd Like To See Updates' into R.string.please_choose_how_often_you_d_like_to_see_updates
+1379577714562	Extracts string 'OK' into R.string.ok
+1379579713715	Delete elements
+1379580273218	Rename resource '1.png'
+1379580280498	Rename resource '2.png'
+1379580288159	Rename resource '3.png'
+1379580297608	Rename resource '4.png'
+1379580310179	Rename resource '5.png'
+1379582624261	Extracts string 'Random Picture Widget' into R.string.random_picture_widget

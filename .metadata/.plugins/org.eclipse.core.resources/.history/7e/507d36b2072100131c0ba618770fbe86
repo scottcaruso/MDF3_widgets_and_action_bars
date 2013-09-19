@@ -1,0 +1,12 @@
+package com.scottcaruso.pictureviewwidget;
+
+import android.appwidget.AppWidgetProvider;
+
+public class PictureWidgetProvider extends AppWidgetProvider {
+
+	public void onUpdate(Context context, AppWidgetManager appWidgetManager, int[] appWidgetIds)
+	{
+		
+	}
+	
+}
