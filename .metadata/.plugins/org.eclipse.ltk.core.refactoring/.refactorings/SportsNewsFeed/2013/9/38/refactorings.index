@@ -1,0 +1,13 @@
+1379551656161	Extracts string 'Sample Link 1' into R.string.sample_link_1
+1379551663599	Extracts string 'Sample Link 2' into R.string.sample_link_2
+1379551673163	Extracts string 'Sample Link 3' into R.string.sample_link_3
+1379551681172	Extracts string 'Sample Link 4' into R.string.sample_link_4
+1379551951041	Extracts string 'News data courtesy of Associated Press' into R.string.news_data_courtesy_of_associated_press
+1379552245296	Extracts string 'newspaper' into R.string.newspaper
+1379557328250	Extracts string 'Update' into R.string.update
+1379557338721	Extracts string 'Details' into R.string.details
+1379560584305	Rename package 'com.scottcaruso.geolocationfunctions'
+1379560604330	Rename package 'com.example.news_feed_widget'
+1379560647790	Rename type 'RetrieveDataFromGeoNames'
+1379575321994	Extracts string 'Sports Headlines' into R.string.sports_headlines
+1379575494705	Change Layout

@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" 
+    android:background="@android:color/darker_gray" >
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="vertical"
+        tools:ignore="UselessParent" >
+        
+        <LinearLayout
+        	android:layout_width="wrap_content"
+        	android:layout_height="wrap_content"
+        	android:layout_gravity="center"
+        	android:orientation="horizontal" >
+
+            <Button
+                android:id="@+id/update"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:background="@android:color/white"
+                android:text="@string/update" />
+
+        	<ImageView
+           	 	android:id="@+id/newspaper_image"
+            	android:layout_width="85dp"
+            	android:layout_height="85dp"
+            	android:layout_gravity="center"
+            	android:contentDescription="@string/newspaper"
+            	android:src="@drawable/newspaper" />
+
+        	<Button
+        	    android:id="@+id/button2"
+        	    style="?android:attr/buttonStyleSmall"
+        	    android:layout_width="wrap_content"
+        	    android:layout_height="wrap_content"
+        	    android:layout_gravity="center_vertical"
+        	    android:text="@string/details" />
+        	
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/link1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:paddingTop="10dp"
+            android:textColor="@android:color/white"
+            android:text="@string/sample_link_1" />
+
+        <TextView
+            android:id="@+id/link2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:paddingTop="10dp"
+            android:textColor="@android:color/white"
+            android:text="@string/sample_link_2" />
+
+        <TextView
+            android:id="@+id/link3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:paddingTop="10dp"
+            android:textColor="@android:color/white"
+            android:text="@string/sample_link_3" />
+
+        <TextView
+            android:id="@+id/link4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:paddingTop="10dp"
+            android:textColor="@android:color/white"
+            android:text="@string/sample_link_4" />
+
+        <TextView
+            android:id="@+id/link5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:paddingTop="10dp"
+            android:textColor="@android:color/white"
+            android:text="@string/sample_link_5" />
+
+        <TextView
+            android:id="@+id/link6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:paddingTop="10dp"
+            android:textColor="@android:color/white"
+            android:text="@string/sample_link_6" />
+
+    </LinearLayout>
+
+</FrameLayout>
