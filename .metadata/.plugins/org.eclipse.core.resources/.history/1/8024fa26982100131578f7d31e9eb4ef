@@ -36,7 +36,6 @@
         <activity android:name="DisplayActivity"></activity>
         <activity android:name="TweetsActivity"></activity>
         <activity android:name="FacebookActivity"></activity>
-        <activity android:name="About"></activity>
     </application>
 
 </manifest>

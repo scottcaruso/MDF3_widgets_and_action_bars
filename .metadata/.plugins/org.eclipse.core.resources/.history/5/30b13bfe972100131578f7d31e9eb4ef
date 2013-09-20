@@ -48,6 +48,8 @@ public class DisplayActivity extends Activity
         myActionBar = this.getActionBar();
         myActionBar.setDisplayShowTitleEnabled(false);
         myActionBar.setNavigationMode(NAVIGATION_MODE_LIST);
+
+        myActionBar.setListNavigationCallbacks(headerSpinner, mOnNavigationListener);
         
         //Register the intentfilter so we can monitor the network here, too.
         IntentFilter filter = new IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION);

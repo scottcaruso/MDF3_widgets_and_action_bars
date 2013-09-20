@@ -1,7 +1,4 @@
-/* Scott Caruso
- * MDF 1309
- * Week 3 - Widgets and Action Bars
- */
+/** Automatically generated file. DO NOT MODIFY */
 package com.scottcaruso.pictureviewwidget;
 
 public final class BuildConfig {

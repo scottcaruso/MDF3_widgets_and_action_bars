@@ -44,10 +44,45 @@ public class DisplayActivity extends Activity
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         setContentView(R.layout.photo_and_location_display);
         //Create a spinner and the listener for it
- 
+        SpinnerAdapter headerSpinner = ArrayAdapter.createFromResource(this, R.array.action_list,
+                android.R.layout.simple_spinner_dropdown_item);
+        
+        OnNavigationListener mOnNavigationListener = new OnNavigationListener() {
+
+        	  @Override
+        	  public boolean onNavigationItemSelected(int position, long itemId) {
+        		
+        		switch (position) {
+        		//Determine which of the navigation options was chosen
+				case 0:
+	        		Log.i("Clicked","Main was clicked.");
+					Intent mainActivity = new Intent(DisplayActivity.this,MainActivity.class);
+					startActivityForResult(mainActivity, 1);
+					break;
+				case 1:
+					Intent tweetsActivity = new Intent(DisplayActivity.this,TweetsActivity.class);
+					startActivityForResult(tweetsActivity, 1);
+	        		Log.i("Clicked","Tweets was clicked.");
+					break;
+					
+				case 2:
+					Intent facebookActivity = new Intent(DisplayActivity.this,FacebookActivity.class);
+					startActivityForResult(facebookActivity, 1);
+	        		Log.i("Clicked","Facebook was clicked.");
+					break;
+				
+				default:
+					break;
+				}
+        		
+        	    return true;
+        	  }
+        	};
         myActionBar = this.getActionBar();
         myActionBar.setDisplayShowTitleEnabled(false);
         myActionBar.setNavigationMode(NAVIGATION_MODE_LIST);
+
+        myActionBar.setListNavigationCallbacks(headerSpinner, mOnNavigationListener);
         
         //Register the intentfilter so we can monitor the network here, too.
         IntentFilter filter = new IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION);
