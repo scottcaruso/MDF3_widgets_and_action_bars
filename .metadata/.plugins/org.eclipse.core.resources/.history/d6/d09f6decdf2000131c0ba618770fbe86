@@ -1,9 +1,0 @@
-package com.scottcaruso.news_feed_widget;
-
-import android.app.Activity;
-
-public class GetHeadlines extends Activity {
-	
-	
-
-}

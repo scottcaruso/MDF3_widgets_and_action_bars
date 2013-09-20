@@ -1,7 +1,0 @@
-package com.scottcaruso.pictureviewwidget;
-
-import android.appwidget.AppWidgetProvider;
-
-public class PictureWidgetProvider extends AppWidgetProvider {
-
-}

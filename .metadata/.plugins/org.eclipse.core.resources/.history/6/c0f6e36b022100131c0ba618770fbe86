@@ -1,7 +1,0 @@
-package com.scottcaruso.pictureviewwidget;
-
-import android.app.Activity;
-
-public class WidgetConfig extends Activity {
-
-}
