@@ -1,3 +1,7 @@
+/* Scott Caruso
+ * MDF3 - 1309
+ * Week 2 - Here I Am Camera/GPS App
+ */
 package com.scottcaruso.hereiam;
 
 import android.app.ActionBar;
@@ -13,6 +17,8 @@ import android.view.MenuItem;
 import android.widget.ArrayAdapter;
 import android.widget.SpinnerAdapter;
 import android.widget.Toast;
+
+//Placeholder page for Facebook functionality
 
 public class FacebookActivity extends Activity {
 	

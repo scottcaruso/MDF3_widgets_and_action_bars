@@ -1,3 +1,7 @@
+/* Scott Caruso
+ * MDF 1309
+ * Week 3 - Widgets and Action Bars
+ */
 package com.scottcaruso.pictureviewwidget;
 
 import android.os.Bundle;
@@ -16,12 +20,14 @@ public class LargeView extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_large_view);
 		
+		//Retrieve the intent of the activity that launched us. If there are extras, that's good! We should use them!
 		Intent passedIntent = getIntent();
 		if (passedIntent != null)
 		{
 			Bundle extras = passedIntent.getExtras();
 			int imageId;
 			try {
+				//Pull the int from the extras, and then utilize it to populate this view.
 				imageId = extras.getInt("image id");
 				ImageView image = (ImageView) findViewById(R.id.imageView1);
 				Bitmap bitmap = BitmapFactory.decodeResource(this.getResources(), 

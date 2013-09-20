@@ -1,16 +1,15 @@
+/* Scott Caruso
+ * MDF3 - 1309
+ * Week 2 - Here I Am Camera/GPS App
+ */
 package com.scottcaruso.hereiam;
 
-import android.app.ActionBar;
 import android.app.Activity;
-import android.app.ActionBar.OnNavigationListener;
-import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
-import android.view.MenuInflater;
-import android.widget.ArrayAdapter;
-import android.widget.SpinnerAdapter;
+
+//This is a very simple page - pretty much placeholder to prove concept.
 
 public class About extends Activity {
 	

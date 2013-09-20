@@ -43,6 +43,7 @@ public class DisplayActivity extends Activity
         
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         
+        //Create a spinner and the listener for it
         SpinnerAdapter headerSpinner = ArrayAdapter.createFromResource(this, R.array.action_list,
                 android.R.layout.simple_spinner_dropdown_item);
         
@@ -52,6 +53,7 @@ public class DisplayActivity extends Activity
         	  public boolean onNavigationItemSelected(int position, long itemId) {
         		
         		switch (position) {
+        		//Determine which of the navigation options was chosen
 				case 0:
 	        		Log.i("Clicked","Main was clicked.");
 					Intent mainActivity = new Intent(DisplayActivity.this,MainActivity.class);
@@ -171,7 +173,7 @@ public class DisplayActivity extends Activity
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle presses on the action bar items
-        switch (item.getItemId()) {
+    	switch (item.getItemId()) {
             case R.id.action_pictures:
 				Toast toast = Toast.makeText(DisplayActivity.this, "Can't select a picture from this view!", Toast.LENGTH_LONG);
 				toast.show();

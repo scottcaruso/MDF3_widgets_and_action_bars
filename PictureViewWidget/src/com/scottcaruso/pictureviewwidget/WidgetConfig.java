@@ -1,3 +1,7 @@
+/* Scott Caruso
+ * MDF 1309
+ * Week 3 - Widgets and Action Bars
+ */
 package com.scottcaruso.pictureviewwidget;
 
 import android.app.Activity;
@@ -23,6 +27,7 @@ public class WidgetConfig extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.configure_widget);
 		
+		//Initialize the OK button and the radio buttons
 		Button okButton = (Button) findViewById(R.id.selection);
 		final RadioGroup radioGroup = (RadioGroup) findViewById(R.id.radio_hours);
 		okButton.setOnClickListener(new View.OnClickListener() {
@@ -30,7 +35,7 @@ public class WidgetConfig extends Activity {
 			@Override
 			public void onClick(View v) {
 				Bundle extras = getIntent().getExtras();
-				
+				//Utilize the placeholder screen and then advance to the widget.
 				if (extras != null)
 				{
 					widgetId = extras.getInt(AppWidgetManager.EXTRA_APPWIDGET_ID,AppWidgetManager.INVALID_APPWIDGET_ID);	

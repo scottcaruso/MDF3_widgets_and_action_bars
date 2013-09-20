@@ -71,6 +71,7 @@ public final class R {
         public static final int random_picture_cycler=0x7f060008;
         public static final int random_picture_widget=0x7f06000b;
         public static final int retrieval_date=0x7f060010;
+        public static final int widget_image=0x7f060011;
     }
     public static final class style {
         /** 

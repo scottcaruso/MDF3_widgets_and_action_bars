@@ -18,5 +18,6 @@
     <string name="image_name">Image Name</string>
     <string name="artist_name">Artist Name</string>
     <string name="retrieval_date">Retrieval Date</string>
+    <string name="widget_image">widget image</string>
 
 </resources>

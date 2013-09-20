@@ -1,3 +1,7 @@
+/* Scott Caruso
+ * MDF 1309
+ * Week 3 - Widgets and Action Bars
+ */
 package com.scottcaruso.pictureviewwidget;
 
 import java.util.Random;
@@ -18,6 +22,7 @@ public class PictureWidgetProvider extends AppWidgetProvider {
 	{
 		final int N = appWidgetIds.length;
 
+		//Randomly decide on a number, and then use that number to figure out which picture to show next.
 		Log.i("Info","Update triggered.");
 		for (int x=0; x < N; x++) {
 			int appWidgetId = appWidgetIds[x];
@@ -43,11 +48,13 @@ public class PictureWidgetProvider extends AppWidgetProvider {
 				resourceID = R.drawable.img5;
 			}
 			
+			//Grab that picture from its resource ID.
 			Bitmap bitmap = BitmapFactory.decodeResource(context.getResources(), 
 				    resourceID);
 			
 			Bitmap scaledBitmap = scaleDownBitmap(bitmap, 100, context);
 			
+			//Prepare the click intent
 			Intent i = new Intent(context,LargeView.class);
 			i.putExtra("image id", resourceID);
 			PendingIntent pi = PendingIntent.getActivity(context, 0, i, PendingIntent.FLAG_UPDATE_CURRENT);
@@ -60,6 +67,7 @@ public class PictureWidgetProvider extends AppWidgetProvider {
 		
 	}
 	
+	//Scale the bitmaps down for memory management
     public static Bitmap scaleDownBitmap(Bitmap photo, int newHeight, Context context) 
     {
     	final float densityMultiplier = context.getResources().getDisplayMetrics().density;        

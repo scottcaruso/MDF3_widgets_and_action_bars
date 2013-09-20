@@ -72,6 +72,7 @@ public class MainActivity extends Activity {
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
     	runGeolocation();
         
+    	//Initialize the spinner in the action bar
         SpinnerAdapter headerSpinner = ArrayAdapter.createFromResource(this, R.array.action_list,
                 android.R.layout.simple_spinner_dropdown_item);
         
@@ -79,7 +80,7 @@ public class MainActivity extends Activity {
 
         	  @Override
         	  public boolean onNavigationItemSelected(int position, long itemId) {
-        		
+        		//What happens when the various things are clicked?
         		switch (position) {
 				case 0:
 	        		Log.i("Clicked","Main was clicked.");
@@ -366,6 +367,7 @@ public class MainActivity extends Activity {
         }
     }
     
+    //To avoid memory issues, this scales down the Bitmap that is used. It can be adjusted accordingly as needed.
     public static Bitmap scaleDownBitmap(Bitmap photo, int newHeight, Context context) 
     {
     	final float densityMultiplier = context.getResources().getDisplayMetrics().density;        
